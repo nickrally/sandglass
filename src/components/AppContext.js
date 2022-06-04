@@ -9,7 +9,6 @@ export const useAppContext = () => {
 export const AppContextProvider = ({ children }) => {
   const [activeTab, setActiveTab] = useState("Home");
   const updateActiveTab = (tab) => {
-    console.log("updateTab");
     setActiveTab(tab);
   };
 

@@ -22,11 +22,9 @@ export const deleteItem = async (id) => {
 
 export const saveItem = async (item) => {
   if (item.id) {
-    console.log("update");
     await axios.put(`${url}/${item.id}`, item);
   } else {
     try {
-      console.log("create");
       await axios.post(url, { ...item, id: Date.now() });
     } catch (err) {
       console.log(err);

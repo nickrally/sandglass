@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { getAll, saveItem, deleteItem } from "../../../api/requests";
-import Form from "../../../components/common/Form";
-import Grid from "../../../components/common/Grid";
-import Habit from "./Habit";
-
+import Form from "../../../components/Form";
+import HabitGrid from "./HabitGrid";
 import "./HabitsPage.css";
 
 const emptyHabit = { description: "" };
-
 const HabitsPage = () => {
   const [habit, setHabit] = useState(emptyHabit);
   const [formErrors, setFormErrors] = useState({});
-
   const { data, isLoading, isFetching, isError } = useQuery(["habits"], getAll);
   const queryClient = useQueryClient();
   const { mutateAsync: mutateAsyncSave } = useMutation(saveItem);
@@ -49,14 +45,6 @@ const HabitsPage = () => {
     setHabit({ ...emptyHabit });
   };
 
-  const renderHabit = (item) => {
-    return (
-      <span style={{ textAlign: "center", padding: "4px" }}>
-        <Habit habit={item} />
-      </span>
-    );
-  };
-
   return (
     <div className="wrapper">
       <div className="header">{"\u23F0"} Habits</div>
@@ -77,11 +65,10 @@ const HabitsPage = () => {
           ) : isError ? (
             "Error!"
           ) : data ? (
-            <Grid
+            <HabitGrid
               data={data}
               handleUpdate={handleUpdate}
               handleDelete={handleDelete}
-              render={renderHabit}
             />
           ) : (
             ""
