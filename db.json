@@ -1,20 +1,16 @@
 {
   "habits": [
     {
-      "description": "longer description",
-      "id": 1654298675950
+      "description": "start day early",
+      "id": 1654348497604
     },
     {
-      "description": "a good habit",
-      "id": 1654313643521
+      "description": "workout resistance",
+      "id": 1654348568665
     },
     {
-      "description": "another good habit",
-      "id": 1654317862586
-    },
-    {
-      "description": "one more good habit",
-      "id": 1654318675552
+      "description": "workout cardio",
+      "id": 1654348580909
     }
   ]
 }

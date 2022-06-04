@@ -1,5 +1,5 @@
 import React from "react";
-const HabitGrid = ({ data, handleUpdate, handleDelete, render }) => {
+const Grid = ({ data, handleUpdate, handleDelete, render }) => {
   return (
     <div className="grid">
       {data.map((item) => (
@@ -29,4 +29,4 @@ const HabitGrid = ({ data, handleUpdate, handleDelete, render }) => {
   );
 };
 
-export default HabitGrid;
+export default Grid;
