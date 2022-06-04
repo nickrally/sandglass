@@ -1,24 +1,16 @@
 {
   "habits": [
     {
-      "description": "test 11",
-      "id": 1654287174681
-    },
-    {
       "description": "longer description",
       "id": 1654298675950
     },
     {
-      "description": "one more good habit",
+      "description": "a good habit",
       "id": 1654313643521
     },
     {
       "description": "another good habit",
-      "id": 1654314096878
-    },
-    {
-      "description": "test 22",
-      "id": 1654315336275
+      "id": 1654317862586
     }
   ]
 }

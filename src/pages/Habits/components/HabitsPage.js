@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { getAll, saveItem, deleteItem } from "../../../api/requests";
 import Form from "../../../components/Form";
-import HabitList from "./HabitList";
+import HabitGrid from "./HabitGrid";
 import "./HabitsPage.css";
 
 const emptyHabit = { description: "" };
@@ -50,7 +50,7 @@ const HabitsPage = () => {
       <div className="header">{"\u23F0"} Habits</div>
       <div className="sidenav">
         <Form
-          habit={habit}
+          item={habit}
           handleChange={handleChange}
           handleSave={handleSave}
           errors={formErrors}
@@ -65,7 +65,7 @@ const HabitsPage = () => {
           ) : isError ? (
             "Error!"
           ) : data ? (
-            <HabitList
+            <HabitGrid
               data={data}
               handleUpdate={handleUpdate}
               handleDelete={handleDelete}
