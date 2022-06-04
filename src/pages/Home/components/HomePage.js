@@ -1,6 +1,6 @@
 import melancholy from "../assets/melancholyOfStreet.jpeg";
 import "./Home.css";
-const Home = () => {
+const HomePage = () => {
   return (
     <div className="home">
       <img src={melancholy} alt="" />
@@ -8,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

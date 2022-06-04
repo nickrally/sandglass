@@ -1,18 +1,18 @@
 import { useAppContext } from "./AppContext";
-import Days from "../pages/Days/components/Days";
-import Habits from "../pages/Habits/components/Habits";
-import Home from "../pages/Home/components/Home";
+import DaysPage from "../pages/Days/components/DaysPage";
+import HabitsPage from "../pages/Habits/components/HabitsPage";
+import HomePage from "../pages/Home/components/HomePage";
 const Content = () => {
   const { activeTab } = useAppContext();
 
   const renderContent = () => {
     switch (activeTab) {
       case "Habits":
-        return <Habits />;
+        return <HabitsPage />;
       case "Days":
-        return <Days />;
+        return <DaysPage />;
       default:
-        return <Home />;
+        return <HomePage />;
     }
   };
   return renderContent();
