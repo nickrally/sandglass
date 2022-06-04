@@ -1,21 +1,15 @@
-import React, { useState } from "react";
-const Form = ({ write }) => {
-  const [value, setValue] = useState("");
-  const handleSave = (e) => {
-    e.preventDefault();
-    console.log("handleSave");
-    write(value);
-    setValue("");
-  };
+import React from "react";
+const Form = ({ habit, handleChange, handleSave }) => {
   return (
     <form onSubmit={handleSave}>
       <h4>New good habit</h4>
-      <label htmlFor="newHabit">Description:</label>
+      <label htmlFor="descriptiont">Description:</label>
       <input
         type="text"
-        id="newHabit"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        id="description"
+        name="description"
+        value={habit.description}
+        onChange={(e) => handleChange(e)}
       />
       <input type="submit" value="Save" />
     </form>
