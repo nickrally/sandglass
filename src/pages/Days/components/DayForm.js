@@ -38,7 +38,9 @@ const DayForm = () => {
     <div>
       <DayPicker {...dayPickerProps} />
       <HabitPicker handleChange={(e) => setHabit(e.target.value)} />
-      <button onClick={handleSave}>Save</button>
+      <button onClick={handleSave} disabled={!habit}>
+        Save
+      </button>
     </div>
   );
 };
