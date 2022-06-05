@@ -1,4 +1,5 @@
 import DayForm from "./DayForm";
+
 const DaysPage = () => {
   return (
     <div className="wrapper">

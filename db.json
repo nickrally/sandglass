@@ -11,6 +11,21 @@
     {
       "description": "workout cardio",
       "id": 1654348580909
+    },
+    {
+      "description": "no news",
+      "id": 1654352922251
+    },
+    {
+      "description": "empty your head for a few minutes at a time",
+      "id": 1654460729326
+    }
+  ],
+  "days": [
+    {
+      "date": "2022-06-05",
+      "habit": "start day early",
+      "id": 1654465505024
     }
   ]
 }

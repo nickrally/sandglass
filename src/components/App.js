@@ -1,6 +1,7 @@
 import { AppContextProvider } from "./AppContext";
 import Navbar from "./Navbar";
 import Content from "./Content";
+import { DataContextProvider } from "./DataContext";
 import "./App.css";
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
     <AppContextProvider>
       <div className="container">
         <Navbar />
-        <Content />
+        <DataContextProvider>
+          <Content />
+        </DataContextProvider>
       </div>
     </AppContextProvider>
   );

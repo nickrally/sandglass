@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "react-query";
-import { getAll, saveItem, deleteItem } from "../../../api/requests";
+import { useMutation, useQueryClient } from "react-query";
+import { saveItem, deleteItem } from "../../../api/habitRequests";
 import Form from "../../../components/common/Form";
 import Grid from "../../../components/common/Grid";
+import { useDataContext } from "../../../components/DataContext";
 import Habit from "./Habit";
 
 import "./HabitsPage.css";
@@ -13,13 +14,14 @@ const HabitsPage = () => {
   const [habit, setHabit] = useState(emptyHabit);
   const [formErrors, setFormErrors] = useState({});
 
-  const { data, isLoading, isFetching, isError } = useQuery(["habits"], getAll);
+  const { habitData, habitIsLoading, habitIsFetching, habitIsError } =
+    useDataContext();
   const queryClient = useQueryClient();
   const { mutateAsync: mutateAsyncSave } = useMutation(saveItem);
   const { mutateAsync: mutateAsyncDelete } = useMutation(deleteItem);
 
   const handleUpdate = async (id) => {
-    const habit = await data?.find((item) => item.id === id);
+    const habit = await habitData?.find((item) => item.id === id);
     setHabit({ ...habit });
   };
 
@@ -70,15 +72,15 @@ const HabitsPage = () => {
       </div>
       <div className="main">
         <ul>
-          {isLoading ? (
+          {habitIsLoading ? (
             "Loading..."
-          ) : isFetching ? (
+          ) : habitIsFetching ? (
             "Fetching..."
-          ) : isError ? (
+          ) : habitIsError ? (
             "Error!"
-          ) : data ? (
+          ) : habitData ? (
             <Grid
-              data={data}
+              data={habitData}
               handleUpdate={handleUpdate}
               handleDelete={handleDelete}
               render={renderHabit}
