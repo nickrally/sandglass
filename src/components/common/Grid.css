@@ -1,0 +1,25 @@
+.grid-three-col {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    /*padding: 0.5px;*/
+  }
+
+.grid-three-col > span {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.grid-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    /*padding: 0.5px;*/
+  }
+
+.grid-three-col > span {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+}

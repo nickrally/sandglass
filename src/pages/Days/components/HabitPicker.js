@@ -1,7 +1,8 @@
 import { useDataContext } from "../../../components/DataContext";
 
 const HabitPicker = ({ handleChange }) => {
-  const { habitData } = useDataContext();
+  const { habitsDataContextProps } = useDataContext();
+  const { habitData } = habitsDataContextProps;
 
   return (
     <div>

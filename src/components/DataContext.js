@@ -1,6 +1,7 @@
 import React, { createContext, useContext } from "react";
 import { useQuery } from "react-query";
-import { getAll } from "../api/habitRequests";
+import { getAll as getAllHabits } from "../api/habitRequests";
+import { getAll as getAllDays } from "../api/dayRequests";
 
 export const DataContext = createContext({});
 
@@ -12,17 +13,36 @@ export const DataContextProvider = ({ children }) => {
     isLoading: habitIsLoading,
     isFetching: habitIsFetching,
     isError: habitIsError,
-  } = useQuery(["habits"], getAll);
+  } = useQuery(["habits"], getAllHabits);
 
-  const habitsDataContext = {
+  const {
+    data: dayData,
+    isLoading: dayIsLoading,
+    isFetching: dayIsFetching,
+    isError: dayIsError,
+  } = useQuery(["days"], getAllDays);
+
+  const habitsDataContextProps = {
     habitData,
     habitIsLoading,
     habitIsFetching,
     habitIsError,
   };
 
+  const daysDataContextProps = {
+    dayData,
+    dayIsLoading,
+    dayIsFetching,
+    dayIsError,
+  };
+
+  const dataContextProps = {
+    habitsDataContextProps,
+    daysDataContextProps,
+  };
+
   return (
-    <DataContext.Provider value={habitsDataContext}>
+    <DataContext.Provider value={dataContextProps}>
       {children}
     </DataContext.Provider>
   );

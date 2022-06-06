@@ -17,7 +17,7 @@
       "id": 1654352922251
     },
     {
-      "description": "empty your head for a few minutes at a time",
+      "description": "empty your head for a few minutes ",
       "id": 1654460729326
     }
   ],
@@ -36,6 +36,11 @@
       "date": "2022-06-05",
       "habit": "empty your head for a few minutes at a time",
       "id": 1654471401617
+    },
+    {
+      "date": "2022-06-05",
+      "habit": "workout cardio",
+      "id": 1654472449039
     }
   ]
 }

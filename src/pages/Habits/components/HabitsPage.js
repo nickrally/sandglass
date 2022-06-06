@@ -14,8 +14,9 @@ const HabitsPage = () => {
   const [habit, setHabit] = useState(emptyHabit);
   const [formErrors, setFormErrors] = useState({});
 
+  const { habitsDataContextProps } = useDataContext();
   const { habitData, habitIsLoading, habitIsFetching, habitIsError } =
-    useDataContext();
+    habitsDataContextProps;
   const queryClient = useQueryClient();
   const { mutateAsync: mutateAsyncSave } = useMutation(saveItem);
   const { mutateAsync: mutateAsyncDelete } = useMutation(deleteItem);
@@ -84,6 +85,7 @@ const HabitsPage = () => {
               handleUpdate={handleUpdate}
               handleDelete={handleDelete}
               render={renderHabit}
+              gridStyle="grid-three-col"
             />
           ) : (
             ""
